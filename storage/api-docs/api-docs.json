@@ -1,0 +1,1166 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Auto Ecole documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/agence": {
+            "get": {
+                "tags": [
+                    "agences"
+                ],
+                "summary": "Get a list of agences",
+                "operationId": "09cc2e0c34631bf0a618e6893c634f5a",
+                "responses": {
+                    "200": {
+                        "description": "List of agences"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "agences"
+                ],
+                "summary": "POST to create agences",
+                "operationId": "4c40206458786b9a9a2d0a03d51aa4d1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "type": "password"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "inmmatriculation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create agences",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/agence/{id}": {
+            "put": {
+                "tags": [
+                    "agences"
+                ],
+                "summary": "Update an agence",
+                "operationId": "8f6382a2fa6fc7af111fb38a12dcabf6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the agence to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "inmmatriculation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Agence updated successfully"
+                    },
+                    "404": {
+                        "description": "Agence not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "agences"
+                ],
+                "summary": "Delete an agence",
+                "operationId": "5220bb774319d9dc7ea1200b4087f00e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the agence to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Agence deleted successfully"
+                    },
+                    "404": {
+                        "description": "Agence not found"
+                    }
+                }
+            }
+        },
+        "/api/clients": {
+            "get": {
+                "tags": [
+                    "Client"
+                ],
+                "summary": "Get a list of clients",
+                "operationId": "0b636ca85e574ff3010b44d6c621c537",
+                "responses": {
+                    "200": {
+                        "description": "List of clients"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Client"
+                ],
+                "summary": "POST to create clients",
+                "operationId": "9fdaf88d446f92c97501f370f36678cb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "conatct": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "integer"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create clients",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/clients/{id}": {
+            "put": {
+                "tags": [
+                    "Client"
+                ],
+                "summary": "Update an clients",
+                "operationId": "9ffd4acb0368eb6068e75cd7dd5d43ff",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the clients to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "conatct": {
+                                        "type": "integer"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "integer"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Client updated successfully"
+                    },
+                    "404": {
+                        "description": "Client not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Client"
+                ],
+                "summary": "Delete an agence",
+                "operationId": "527e3694096ac0e9d71511de8b647c8d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the clients to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "clients deleted successfully"
+                    },
+                    "404": {
+                        "description": "clients not found"
+                    }
+                }
+            }
+        },
+        "/api/examens": {
+            "get": {
+                "tags": [
+                    "Examen"
+                ],
+                "summary": "Get a list of examens",
+                "operationId": "2bc4fda4783f2a4ebe59ca8d5db0d549",
+                "responses": {
+                    "200": {
+                        "description": "List of examens"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Examen"
+                ],
+                "summary": "POST to create examens",
+                "operationId": "ffeba957be7af58d27cc1a880c3e63c4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "lieu": {
+                                        "type": "string"
+                                    },
+                                    "heure": {
+                                        "type": "heure"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create examens",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/examens/{id}": {
+            "put": {
+                "tags": [
+                    "Examen"
+                ],
+                "summary": "Update an examens",
+                "operationId": "d284e3b230a17eee29fd73d49579cda1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the examens to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "lieu": {
+                                        "type": "string"
+                                    },
+                                    "heure": {
+                                        "type": "heure"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Examen updated successfully"
+                    },
+                    "404": {
+                        "description": "Examen not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Examen"
+                ],
+                "summary": "Delete an examens",
+                "operationId": "4006e7d4611c7139b6b3b388912af70f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the examens to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "examens deleted successfully"
+                    },
+                    "404": {
+                        "description": "examens not found"
+                    }
+                }
+            }
+        },
+        "/api/formations": {
+            "get": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Get a list of formations",
+                "operationId": "e9f47b6b4527e9911f5093014e67cf98",
+                "responses": {
+                    "200": {
+                        "description": "List of formations"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "POST to create formations",
+                "operationId": "6cdb1676fb80d2da8f3c34d6955d8555",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "lieu": {
+                                        "type": "string"
+                                    },
+                                    "datedebut": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "datefin": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    },
+                                    "salle_id": {
+                                        "type": "integer"
+                                    },
+                                    "personnel_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create formations",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/formations/{id}": {
+            "put": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Update an formations",
+                "operationId": "1abe8ca3963b5406164a8e7b65f7ed99",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the formations to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "lieu": {
+                                        "type": "string"
+                                    },
+                                    "datedebut": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "datefin": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    },
+                                    "salle_id": {
+                                        "type": "integer"
+                                    },
+                                    "personnel_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Formation updated successfully"
+                    },
+                    "404": {
+                        "description": "Formation not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Delete an formations",
+                "operationId": "9fe28e10522db190b3770d536d99aed3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the formations to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "formations deleted successfully"
+                    },
+                    "404": {
+                        "description": "formations not found"
+                    }
+                }
+            }
+        },
+        "/api/permis": {
+            "get": {
+                "tags": [
+                    "Permis"
+                ],
+                "summary": "Get a list of permis",
+                "operationId": "5bc18a1dc63281289a67c007301720c9",
+                "responses": {
+                    "200": {
+                        "description": "List of permis"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Permis"
+                ],
+                "summary": "POST to create permis",
+                "operationId": "c34e8731796ead06f661b956d12d7b93",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    },
+                                    "client_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create permis",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/permis/{id}": {
+            "put": {
+                "tags": [
+                    "Permis"
+                ],
+                "summary": "Update an permis",
+                "operationId": "ab76ec16207524bfd707f9d8e37cdb48",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the permis to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Permis updated successfully"
+                    },
+                    "404": {
+                        "description": "Permis not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Permis"
+                ],
+                "summary": "Delete an permis",
+                "operationId": "2aff488ee41f79df34872549223717ad",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the permis to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "permis deleted successfully"
+                    },
+                    "404": {
+                        "description": "permis not found"
+                    }
+                }
+            }
+        },
+        "/api/personnels": {
+            "get": {
+                "tags": [
+                    "personels"
+                ],
+                "summary": "Get a list of personnels",
+                "operationId": "05fefd580bf90338727d99ad711e626f",
+                "responses": {
+                    "200": {
+                        "description": "List of personnels"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "personels"
+                ],
+                "summary": "POST to create personnels",
+                "operationId": "182c936cb53bcd8c33df111f82cc1d41",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "type": "password"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create personnels",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/personnels/{id}": {
+            "put": {
+                "tags": [
+                    "personels"
+                ],
+                "summary": "Update an personnels",
+                "operationId": "3026b9166ba6348fdce0c3ea806926b9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the personnels to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "fullname": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    },
+                                    "phone": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "type": "password"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Personnels updated successfully"
+                    },
+                    "404": {
+                        "description": "Personnels not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "personels"
+                ],
+                "summary": "Delete an personnels",
+                "operationId": "17df0e78d721cac90b5fd9b48e95b173",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the personnels to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "personnels deleted successfully"
+                    },
+                    "404": {
+                        "description": "personnels not found"
+                    }
+                }
+            }
+        },
+        "/api/salles": {
+            "get": {
+                "tags": [
+                    "Salle"
+                ],
+                "summary": "Get a list of salles",
+                "operationId": "aeeed0660e308522aeb9b85c58e43291",
+                "responses": {
+                    "200": {
+                        "description": "List of salles"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Salle"
+                ],
+                "summary": "POST to create salles",
+                "operationId": "a6e403cab143ca121bc3a5d608639d49",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "nombreplace": {
+                                        "type": "integer"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create salles",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/salles/{id}": {
+            "put": {
+                "tags": [
+                    "Salle"
+                ],
+                "summary": "Update an salles",
+                "operationId": "1e02a561c162278cf40c4d2c0b46232c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the salles to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "nombreplace": {
+                                        "type": "integer"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Salle updated successfully"
+                    },
+                    "404": {
+                        "description": "Salle not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Salle"
+                ],
+                "summary": "Delete an salles",
+                "operationId": "ea52505bdaa729bc8b4487ca37aa9bbc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the salles to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "salles deleted successfully"
+                    },
+                    "404": {
+                        "description": "salles not found"
+                    }
+                }
+            }
+        },
+        "/api/voitures": {
+            "get": {
+                "tags": [
+                    "Voiture"
+                ],
+                "summary": "Get a list of voitures",
+                "operationId": "d30e08bf59ac622fe14c7362320dc603",
+                "responses": {
+                    "200": {
+                        "description": "List of voitures"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Voiture"
+                ],
+                "summary": "POST to create voitures",
+                "operationId": "e2a7c92656a073701b2eb4c3bceb4c1e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "nombreplace": {
+                                        "type": "integer"
+                                    },
+                                    "matricule": {
+                                        "type": "string"
+                                    },
+                                    "marque": {
+                                        "type": "string"
+                                    },
+                                    "couleur": {
+                                        "type": "string"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    },
+                                    "personnel_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create voitures",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/voitures/{id}": {
+            "put": {
+                "tags": [
+                    "Voiture"
+                ],
+                "summary": "Update an voitures",
+                "operationId": "1bc82e701dee77e4a8493f97a9271c2c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the voitures to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "libelle": {
+                                        "type": "string"
+                                    },
+                                    "nombreplace": {
+                                        "type": "integer"
+                                    },
+                                    "matricule": {
+                                        "type": "string"
+                                    },
+                                    "marque": {
+                                        "type": "string"
+                                    },
+                                    "couleur": {
+                                        "type": "string"
+                                    },
+                                    "agence_id": {
+                                        "type": "integer"
+                                    },
+                                    "personnel_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Voiture updated successfully"
+                    },
+                    "404": {
+                        "description": "Voiture not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Voiture"
+                ],
+                "summary": "Delete an voitures",
+                "operationId": "069aac1b335836053a0aeff432fd44cf",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the voitures to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "voitures deleted successfully"
+                    },
+                    "404": {
+                        "description": "voitures not found"
+                    }
+                }
+            }
+        }
+    }
+}
