@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\personels;
-use App\Models\agence;//pour l'id de l'agence dans personnel
+use App\Models\agence;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class PersonnelsController extends Controller
@@ -82,24 +84,26 @@ class PersonnelsController extends Controller
         // $personnels = personels::create($request->all());
 
          // Validation des données
-    $validatedData = $request->validate([
-        'fullname' => 'required|string|max:255',
-        'conatct' => 'required|integer|max:255',
-        'adresse' => 'required|string|max:255',
-        'age' => 'required|integer|max:255',
-        'agence_id' => 'required|integer|max:10',
-    ]);
+        $validatedData = $request->validate([
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'adresse' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
+            'agence_id' => 'required|integer|exists:agences,id',
+        ]);
 
-    // Cryptage du mot de passe
-    $validatedData['password'] = Hash::make($validatedData['password']);
+        // Cryptage du mot de passe
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
-    // Création de l'agence avec les données validées
-    $agences = agence::create($validatedData);
+        // Création de l'agence avec les données validées
+        $personels = personels::create($validatedData);
 
 
-    $response = array_merge($request->all(), ['id' => $agences->id]);
+        $response = array_merge($request->all(), ['id' => $personels->id]);
 
-    return response()->json($response, 200);
+        return response()->json($response, 200);
     }
 
     /**

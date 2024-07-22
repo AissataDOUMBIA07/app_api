@@ -29,9 +29,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('agence', AgenceController::class);
 Route::apiResource('personnels', PersonnelsController::class);
-Route::apiResource('salles', SallesController::class);
-Route::apiResource('formations', FormationsController::class);
+
+
 Route::apiResource('voitures', VoituresController::class);
 Route::apiResource('examens', ExamensController::class);
 Route::apiResource('clients', ClientsController::class);
 Route::apiResource('permis', PermisController::class);
+Route::post('admin/login', [LoginController::class, 'login'])->name('login');
+
+Route::post('admin/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::middleware(('auth:sanctum'))->group(function() {
+    Route::apiResource('salles', SallesController::class);
+    Route::apiResource('formations', FormationsController::class);
+});
